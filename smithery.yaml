@@ -1,16 +1,12 @@
-# Smithery.ai configuration
 startCommand:
   type: stdio
-  configSchema:
-    # JSON Schema defining the configuration options for the MCP.
-    {}
-  commandFunction:
-    # A function that produces the CLI command to start the MCP on stdio.
-    |-
+  configSchema: {}
+  commandFunction: |-
     (config) => ({
-      "command": "uv",
+      "command": "uvx",
       "args": [
-        "run",
-        "server.py"
+        "--from",
+        "git+https://github.com/RodrigoMeloMarcolino/yahoo-finance-mcp",
+        "yahoo-finance-mcp"
       ]
     })
